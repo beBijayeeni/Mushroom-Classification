@@ -36,4 +36,4 @@ pip install -r requirements.txt
 ### Download the Dataset
 Download the dataset from the provided link.
 
-Dataset: https://www.kaggle.com/datasets/uciml/mushroom-classification 
+[Mushroom Classification Dataset](https://www.kaggle.com/uciml/mushroom-classification)
