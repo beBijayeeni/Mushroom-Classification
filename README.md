@@ -5,7 +5,6 @@ This project aims to classify mushrooms as edible or poisonous using various mac
 ## Table of Contents
 - [Project Description](#project-description)
 - [Installation](#installation)
-- [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Results](#results)
 - [Contributing](#contributing)
@@ -26,7 +25,7 @@ The main goal is to predict which mushroom is poisonous and which is edible base
 
 ### Clone the Repository
 ```sh
-git clone https://github.com/yourusername/mushroom-classification.git
+git clone https://github.com/beBijayeeni/mushroom-classification.git
 cd mushroom-classification
 ```
 
@@ -39,3 +38,31 @@ pip install -r requirements.txt
 Download the dataset from the provided link.
 
 [Mushroom Classification Dataset](https://www.kaggle.com/uciml/mushroom-classification)
+
+## Project Structure
+
+```sh
+mushroom-classification/
+│
+├── data/                    # Dataset and related files
+│   └── mushrooms_revised.csv
+├── notebooks/               # Colab notebooks for exploration and model building
+│   ├── mushroom_classification_EDA_model_comparison.ipynb
+│   └── mushroom_classifier_LGR.ipynb
+├── tests/                   # Test cases for the project
+├── requirements.txt         # List of dependencies
+└── README.md                # Project documentation
+```
+
+## Results
+
+### Model Performance
+Summary of model performance, including accuracy scores and other relevant metrics.
+
+### Random Forest Classifier:
+- Accuracy: 100.00%
+- Precision: 1.00
+- Recall: 1.00
+- F1 Score: 1.00
+
+### 
