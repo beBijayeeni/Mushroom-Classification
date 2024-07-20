@@ -9,6 +9,7 @@ This project aims to classify mushrooms as edible or poisonous using various mac
 - [Results](#results)
 - [Contributing](#contributing)
 - [License](#license)
+- [Additional Resources](#additional-resources)
 
 ## Project Description
 The goal of this project is to predict which mushrooms are poisonous and which are edible based on their physical characteristics. The dataset used in this project is from the Audubon Society Field Guide to North American Mushrooms, which contains descriptions of hypothetical samples corresponding to 23 species of gilled mushrooms in the Agaricus and Lepiota Family Mushroom (1981).
@@ -49,6 +50,8 @@ mushroom-classification/
 ├── notebooks/               # Colab notebooks for exploration and model building
 │   ├── mushroom_classification_EDA_model_comparison.ipynb
 │   └── mushroom_classifier_LGR.ipynb
+├── app/                     # Streamlit application
+│   └── mushroom_classifier_app.py
 ├── tests/                   # Test cases for the project
 ├── requirements.txt         # List of dependencies
 └── README.md                # Project documentation
@@ -109,3 +112,12 @@ Contributions are welcome! Please fork this repository and submit a pull request
 - Push to the branch (`git push origin feature-branch`).
 - Open a pull request.
 
+## License
+
+This project is licensed under the MIT License - see the `LICENSE` file for details.
+
+### Additional Resources
+- [Streamlit Documentation](https://docs.streamlit.io/)
+- [Google Colab Documentation](https://colab.research.google.com/notebooks/basic_features_overview.ipynb)
+- [Python Documentation](https://docs.python.org/3/)
+- [PEP 8 Coding Standards](https://peps.python.org/pep-0008/)
