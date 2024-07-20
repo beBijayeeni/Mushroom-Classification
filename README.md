@@ -97,3 +97,15 @@ Summary of model performance, including accuracy scores and other relevant metri
 
 ### Model Selection
 Considering the balance between accuracy, interpretability, and computational complexity, Logistic Regression is a preferable choice for this binary classification problem.
+
+## Contributing
+
+Contributions are welcome! Please fork this repository and submit a pull request for any improvements or bug fixes.
+
+### Steps to Contributee
+- Fork the repository.
+- Create a new branch (`git checkout -b feature-branch`).
+- Make your changes and commit them (`git commit -m 'Add some feature'`).
+- Push to the branch (`git push origin feature-branch`).
+- Open a pull request.
+
