@@ -31,7 +31,9 @@ cd mushroom-classification
 ```
 
 ### Install Dependencies
+```sh
 pip install -r requirements.txt
+```
 
 ### Download the Dataset
 Download the dataset from the provided link.
