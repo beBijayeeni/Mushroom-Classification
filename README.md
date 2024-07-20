@@ -28,5 +28,3 @@ The main goal is to predict which mushroom is poisonous and which is edible base
 ```sh
 git clone https://github.com/yourusername/mushroom-classification.git
 cd mushroom-classification
-
-## Install Dependencies
