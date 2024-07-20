@@ -44,7 +44,7 @@ Download the dataset from the provided link.
 ```sh
 mushroom-classification/
 │
-├── data/                    # Dataset and related files
+├── data/                    # Dataset
 │   └── mushrooms_revised.csv
 ├── notebooks/               # Colab notebooks for exploration and model building
 │   ├── mushroom_classification_EDA_model_comparison.ipynb
@@ -65,4 +65,35 @@ Summary of model performance, including accuracy scores and other relevant metri
 - Recall: 1.00
 - F1 Score: 1.00
 
-### 
+### Logistic Regression
+- Accuracy: 96.00%
+- Precision: 0.96
+- Recall: 0.96
+- F1 Score: 0.96
+
+### Decision Tree
+- Accuracy: 100.00%
+- Precision: 1.00
+- Recall: 1.00
+- F1 Score: 1.00
+
+### Support Vector Machine
+- Accuracy: 99.94%
+- Precision: 1.00
+- Recall: 1.00
+- F1 Score: 1.00
+
+### Gradient Boosting
+- Accuracy: 100.00%
+- Precision: 1.00
+- Recall: 1.00
+- F1 Score: 1.00
+
+### K-Nearest Neighbors
+- Accuracy: 100.00%
+- Precision: 1.00
+- Recall: 1.00
+- F1 Score: 1.00
+
+### Model Selection
+Considering the balance between accuracy, interpretability, and computational complexity, Logistic Regression is a preferable choice for this binary classification problem.
