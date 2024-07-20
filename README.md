@@ -105,7 +105,7 @@ Considering the balance between accuracy, interpretability, and computational co
 
 Contributions are welcome! Please fork this repository and submit a pull request for any improvements or bug fixes.
 
-### Steps to Contributee
+### Steps to Contribute
 - Fork the repository.
 - Create a new branch (`git checkout -b feature-branch`).
 - Make your changes and commit them (`git commit -m 'Add some feature'`).
