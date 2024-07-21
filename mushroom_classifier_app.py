@@ -15,7 +15,35 @@ with open('mappings.pkl', 'rb') as f:
     mappings = pickle.load(f)
 
 # Streamlit UI
-st.title("Mushroom Classification")
+st.set_page_config(page_title="Mushroom Classification", page_icon="🍄", layout="centered")
+# Inject custom CSS
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background: linear-gradient(135deg, #71b7e6, #9b59b6);
+        background-attachment: fixed;
+    }
+    .title {
+        color: white;
+        font-size: 3em;
+        font-weight: bold;
+    }
+    .header, .subheader, .label {
+        color: white;
+    }
+    .markdown-text-container {
+        color: white;
+    }
+    .markdown-text-container p {
+        color: white;
+    }
+    </style>
+    """, unsafe_allow_html=True
+)
+
+st.title("Mushroom Classification 🍄 ")
+st.write("Determine whether a mushroom is edible or poisonous based on its attributes.")
 
 # Define function to make predictions
 def predict_mushroom(cap_shape, cap_surface, cap_color, bruises, odor, gill_attachment, gill_spacing, gill_size, gill_color, stalk_shape, stalk_root, stalk_surface_above_ring, stalk_surface_below_ring, stalk_color_above_ring, stalk_color_below_ring, veil_color, ring_number, ring_type, spore_print_color, population, habitat):
@@ -47,29 +75,39 @@ def predict_mushroom(cap_shape, cap_surface, cap_color, bruises, odor, gill_atta
     return "Edible" if prediction == 0 else "Poisonous"
 
 # Create the form for user input
-st.sidebar.header("Mushroom Attributes")
-cap_shape = st.sidebar.selectbox("Cap Shape", options=list(mappings['cap-shape'].keys()))
-cap_surface = st.sidebar.selectbox("Cap Surface", options=list(mappings['cap-surface'].keys()))
-cap_color = st.sidebar.selectbox("Cap Color", options=list(mappings['cap-color'].keys()))
-bruises = st.sidebar.selectbox("Bruises", options=list(mappings['bruises'].keys()))
-odor = st.sidebar.selectbox("Odor", options=list(mappings['odor'].keys()))
-gill_attachment = st.sidebar.selectbox("Gill Attachment", options=list(mappings['gill-attachment'].keys()))
-gill_spacing = st.sidebar.selectbox("Gill Spacing", options=list(mappings['gill-spacing'].keys()))
-gill_size = st.sidebar.selectbox("Gill Size", options=list(mappings['gill-size'].keys()))
-gill_color = st.sidebar.selectbox("Gill Color", options=list(mappings['gill-color'].keys()))
-stalk_shape = st.sidebar.selectbox("Stalk Shape", options=list(mappings['stalk-shape'].keys()))
-stalk_root = st.sidebar.selectbox("Stalk Root", options=list(mappings['stalk-root'].keys()))
-stalk_surface_above_ring = st.sidebar.selectbox("Stalk Surface Above Ring", options=list(mappings['stalk-surface-above-ring'].keys()))
-stalk_surface_below_ring = st.sidebar.selectbox("Stalk Surface Below Ring", options=list(mappings['stalk-surface-below-ring'].keys()))
-stalk_color_above_ring = st.sidebar.selectbox("Stalk Color Above Ring", options=list(mappings['stalk-color-above-ring'].keys()))
-stalk_color_below_ring = st.sidebar.selectbox("Stalk Color Below Ring", options=list(mappings['stalk-color-below-ring'].keys()))
-veil_color = st.sidebar.selectbox("Veil Color", options=list(mappings['veil-color'].keys()))
-ring_number = st.sidebar.selectbox("Ring Number", options=list(mappings['ring-number'].keys()))
-ring_type = st.sidebar.selectbox("Ring Type", options=list(mappings['ring-type'].keys()))
-spore_print_color = st.sidebar.selectbox("Spore Print Color", options=list(mappings['spore-print-color'].keys()))
-population = st.sidebar.selectbox("Population", options=list(mappings['population'].keys()))
-habitat = st.sidebar.selectbox("Habitat", options=list(mappings['habitat'].keys()))
+with st.sidebar:
+    st.header("Mushroom Attributes")
+    st.write("Please select the attributes of the mushroom:")
 
-if st.sidebar.button("Predict"):
+    cap_shape = st.selectbox("Cap Shape", options=list(mappings['cap-shape'].keys()))
+    cap_surface = st.selectbox("Cap Surface", options=list(mappings['cap-surface'].keys()))
+    cap_color = st.selectbox("Cap Color", options=list(mappings['cap-color'].keys()))
+    bruises = st.selectbox("Bruises", options=list(mappings['bruises'].keys()))
+    odor = st.selectbox("Odor", options=list(mappings['odor'].keys()))
+    gill_attachment = st.selectbox("Gill Attachment", options=list(mappings['gill-attachment'].keys()))
+    gill_spacing = st.selectbox("Gill Spacing", options=list(mappings['gill-spacing'].keys()))
+    gill_size = st.selectbox("Gill Size", options=list(mappings['gill-size'].keys()))
+    gill_color = st.selectbox("Gill Color", options=list(mappings['gill-color'].keys()))
+    stalk_shape = st.selectbox("Stalk Shape", options=list(mappings['stalk-shape'].keys()))
+    stalk_root = st.selectbox("Stalk Root", options=list(mappings['stalk-root'].keys()))
+    stalk_surface_above_ring = st.selectbox("Stalk Surface Above Ring", options=list(mappings['stalk-surface-above-ring'].keys()))
+    stalk_surface_below_ring = st.selectbox("Stalk Surface Below Ring", options=list(mappings['stalk-surface-below-ring'].keys()))
+    stalk_color_above_ring = st.selectbox("Stalk Color Above Ring", options=list(mappings['stalk-color-above-ring'].keys()))
+    stalk_color_below_ring = st.selectbox("Stalk Color Below Ring", options=list(mappings['stalk-color-below-ring'].keys()))
+    veil_color = st.selectbox("Veil Color", options=list(mappings['veil-color'].keys()))
+    ring_number = st.selectbox("Ring Number", options=list(mappings['ring-number'].keys()))
+    ring_type = st.selectbox("Ring Type", options=list(mappings['ring-type'].keys()))
+    spore_print_color = st.selectbox("Spore Print Color", options=list(mappings['spore-print-color'].keys()))
+    population = st.selectbox("Population", options=list(mappings['population'].keys()))
+    habitat = st.selectbox("Habitat", options=list(mappings['habitat'].keys()))
+
+if st.button("Predict"):
     result = predict_mushroom(cap_shape, cap_surface, cap_color, bruises, odor, gill_attachment, gill_spacing, gill_size, gill_color, stalk_shape, stalk_root, stalk_surface_above_ring, stalk_surface_below_ring, stalk_color_above_ring, stalk_color_below_ring, veil_color, ring_number, ring_type, spore_print_color, population, habitat)
-    st.write(f"The mushroom is predicted to be: **{result}**")
+    if result == "Edible":
+        st.success(f"The mushroom is predicted to be: **{result}**")
+    else:
+        st.error(f"The mushroom is predicted to be: **{result}**")
+
+# Add a footer with more information
+st.markdown("---")
+st.markdown("This application uses a machine learning model- **logistic regression** to predict whether a mushroom is edible or poisonous based on its physical attributes. Always exercise caution and consult an expert before consuming wild mushrooms.")
