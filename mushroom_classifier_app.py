@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
 
 # Load the model and scalers
@@ -16,33 +16,54 @@ with open('mappings.pkl', 'rb') as f:
 
 # Streamlit UI
 st.set_page_config(page_title="Mushroom Classification", page_icon="🍄", layout="centered")
+
 # Inject custom CSS
 st.markdown(
     """
     <style>
     .stApp {
-        background: linear-gradient(135deg, #71b7e6, #9b59b6);
-        background-attachment: fixed;
+        background: url("https://c4.wallpaperflare.com/wallpaper/696/478/376/forest-light-night-yellow-wallpaper-preview.jpg") no-repeat center center fixed;
+        background-size: cover;
     }
-    .title {
-        color: white;
-        font-size: 3em;
-        font-weight: bold;
+    .overlay {
+        background: rgba(0, 0, 0, 0.6);  /* Black background with transparency */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;  /* Behind the content */
     }
-    .header, .subheader, .label {
-        color: white;
+    .title, .header, .subheader, .label, .markdown-text-container, .markdown-text-container p {
+        color: #ffffff;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     }
-    .markdown-text-container {
+    .stButton>button {
+        background-color: #0068c9; /* Blue background color for the button */
         color: white;
+        border-radius: 12px;
+        padding: 10px 20px;
+        border: none;
     }
-    .markdown-text-container p {
-        color: white;
+    .stButton>button:hover {
+        background-color: #004d99; /* Darker blue for hover effect */
+    }
+    .sidebar .sidebar-content {
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 10px;
+        padding: 20px;
+    }
+    .sidebar .stSelectbox {
+        color: black;
     }
     </style>
     """, unsafe_allow_html=True
 )
 
-st.title("Mushroom Classification 🍄 ")
+# Add an overlay div
+st.markdown('<div class="overlay"></div>', unsafe_allow_html=True)
+
+st.title("Mushroom Classification")
 st.write("Determine whether a mushroom is edible or poisonous based on its attributes.")
 
 # Define function to make predictions
@@ -76,7 +97,7 @@ def predict_mushroom(cap_shape, cap_surface, cap_color, bruises, odor, gill_atta
 
 # Create the form for user input
 with st.sidebar:
-    st.header("Mushroom Attributes")
+    st.header("Mushroom Attributes 🍄")
     st.write("Please select the attributes of the mushroom:")
 
     cap_shape = st.selectbox("Cap Shape", options=list(mappings['cap-shape'].keys()))
@@ -104,9 +125,9 @@ with st.sidebar:
 if st.button("Predict"):
     result = predict_mushroom(cap_shape, cap_surface, cap_color, bruises, odor, gill_attachment, gill_spacing, gill_size, gill_color, stalk_shape, stalk_root, stalk_surface_above_ring, stalk_surface_below_ring, stalk_color_above_ring, stalk_color_below_ring, veil_color, ring_number, ring_type, spore_print_color, population, habitat)
     if result == "Edible":
-        st.success(f"The mushroom is predicted to be: **{result}**")
+        st.write(f"The mushroom is predicted to be: **{result}**")
     else:
-        st.error(f"The mushroom is predicted to be: **{result}**")
+        st.write(f"The mushroom is predicted to be: **{result}**")
 
 # Add a footer with more information
 st.markdown("---")
