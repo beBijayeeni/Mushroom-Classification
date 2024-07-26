@@ -104,7 +104,7 @@ Considering the balance between accuracy, interpretability, and computational co
 
 ## User Interface
 
-![image](https://github.com/user-attachments/assets/ebf2a933-d3df-46aa-9293-b7bc072f8e08)
+
 
 ## Contributing
 
