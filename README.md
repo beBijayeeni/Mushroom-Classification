@@ -42,6 +42,11 @@ Download the dataset from the provided link.
 
 [Mushroom Classification Dataset](https://www.kaggle.com/uciml/mushroom-classification)
 
+### Run the Streamlit App:
+```sh
+streamlit run mushroom_classifier_app.py
+```
+
 ## Usage
 
 Run the Colab Notebooks to explore and preprocess the data, train models, and evaluate their performance.
@@ -57,14 +62,15 @@ mushroom-classification/
 │   ├── mushroom_classification_EDA_model_comparison.ipynb
 │   └── mushroom_classifier_LGR.ipynb
 ├── app/                     # Streamlit application
-│   |── model.pkl
-|   |── scaler.pkl
-|   |── mappings.pkl
-|   |── mushroom_classifier_app.py
+│   ├── model.pkl
+│   ├── scaler.pkl
+│   ├── mappings.pkl
+│   └── mushroom_classifier_app.py
 ├── tests/                   # Test cases for the project
 ├── requirements.txt         # List of dependencies
-└── README.md                # Project documentation
-└──Deployment/               # Deploy model using Streamlit
+├── README.md                # Project documentation
+└── deployment/              # Deploy model using Streamlit
+
 ```
 
 ## Results
