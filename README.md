@@ -7,6 +7,7 @@ This project aims to classify mushrooms as edible or poisonous using various mac
 - [Installation](#installation)
 - [Project Structure](#project-structure)
 - [Results](#results)
+- [User Interface](#user-interface)
 - [Contributing](#contributing)
 - [License](#license)
 - [Additional Resources](#additional-resources)
@@ -100,6 +101,10 @@ Summary of model performance, including accuracy scores and other relevant metri
 
 ### Model Selection
 Considering the balance between accuracy, interpretability, and computational complexity, Logistic Regression is a preferable choice for this binary classification problem.
+
+## User Interface
+
+![image](https://github.com/user-attachments/assets/ebf2a933-d3df-46aa-9293-b7bc072f8e08)
 
 ## Contributing
 
