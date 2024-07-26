@@ -105,9 +105,7 @@ Considering the balance between accuracy, interpretability, and computational co
 ## User Interface
 
 Web Application URL:
-
 [Mushrrom Classification App](https://mushroom-classification-webapp.streamlit.app/)
-
 
 ![image](https://github.com/user-attachments/assets/b1041266-9d29-42e9-9e56-c60db74eedf0)
 
